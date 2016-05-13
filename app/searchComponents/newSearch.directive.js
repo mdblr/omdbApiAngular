@@ -13,7 +13,7 @@
         `<div>
           <p>Start a new search</p>
           <input type='text' ng-model='feature.newSearch' />
-          <a href=/search/{{feature.all}}/{{feature.newSearch}}>Submit</a>
+          <a href=/search/{{feature.media}}/{{feature.newSearch}}>Submit</a>
         </div>`
       }
     }
