@@ -10,11 +10,13 @@
 
       let vm = this;
       let userInput = $routeParams.movieString;
-      vm.films;
-      vm.error;
+      let media = $routeParams.media;
 
-      searchOMDB.titlesLike(userInput, 'search')
+      vm.films, vm.error;
+
+      searchOMDB.titlesLike(userInput, 'search', media)
       .then(function(omdb) {
+        console.log(`results: ${(omdb.data.Search)}`);
         vm.films = omdb.data.Search;
       })
       .catch(function(error) {

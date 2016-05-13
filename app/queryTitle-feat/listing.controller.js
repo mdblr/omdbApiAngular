@@ -8,11 +8,11 @@
     function Listing(searchOMDB, $routeParams) {
 
       let userInput = $routeParams.title;
+      let media = $routeParams.media;
       let vm = this;
-      vm.film;
-      vm.error;
+      vm.film, vm.error;
 
-      searchOMDB.singleTitle(userInput, 'title')
+      searchOMDB.singleTitle(userInput, 'title', media)
       .then(function(film) {
         vm.film = film;
       })

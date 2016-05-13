@@ -1,5 +1,6 @@
 <h1>results</h1>
 <div ng-repeat='film in Search.films'>
-    <br /><a href=/search/title/{{film.Title}}>{{film.Title}}</a><br />
+    <br /><a href=/{{film.Type}}/title/{{film.Title}}>{{film.Title}}</a><br />
+
 </div>
 <de-new-search feat='Search'></de-new-search>
