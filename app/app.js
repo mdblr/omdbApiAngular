@@ -1,33 +1,35 @@
 (function() {
-  angular
-    .module('omdbApp', [
-      'ngRoute',
+  'use strict';
 
-    ])
+  angular
+    .module('omdbApp', ['ngRoute'])
     .config(config);
 
-    config.$inject = ['$routeProvider', '$locationProvider'];
+  config.$inject = ['$routeProvider', '$locationProvider'];
 
-    function config($routeProvider, $locationProvider) {
-      $routeProvider
-        .when('/', {
-          templateUrl:,
-          controllerAs:,
-          controller:
-        })
-        .when('/search', {
-          templateUrl:,
-          controllerAs:,
-          controller:
-        })
-        .when('/:movieTitle', {
-          templateUrl:,
-          controllerAs:,
-          controller:
-        })
-        .otherwise({
-          redirectTo: '/'
-        });
-      $locationProvider.html5Mode(true); 
-    }
+  function config($routeProvider, $locationProvider) {
+    console.log('routes');
+    $routeProvider
+      .when('/', {
+        templateUrl: '/home/home.html',
+        controllerAs: 'Home',
+        controller: 'Home'
+      })
+      .when('/search', {
+        templateUrl: '/search/results.html',
+        controllerAs: 'Results',
+        controller: 'Results'
+      })
+      .when('/movie', {
+        templateUrl: '/movie/listing.html',
+        controllerAs: 'Listing',
+        controller: 'Listing'
+      })
+      .otherwise({
+        redirectTo: "/"
+      });
+
+    $locationProvider.html5Mode(true);
+  }
+
 })();
