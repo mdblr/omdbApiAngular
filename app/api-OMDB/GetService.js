@@ -31,7 +31,7 @@
         return $http.get(apiBaseUrl + input)
                 .then(
                   function(success) {
-                    return success.data;
+                    return success;
                   },
                   function(error) {
                     console.log(error);
@@ -40,7 +40,8 @@
                 );
       }
 
-      search.singleTitle = function (input) {
+
+      search.singleTitle = function (input, type) {
 
         input = configInput(input, type);
 
@@ -55,7 +56,9 @@
                   }
                 );
       }
-      return search;
+
+    return search;
+
     }
 
 })();
