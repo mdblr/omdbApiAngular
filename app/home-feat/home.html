@@ -1,4 +1,15 @@
 <h1>home</h1>
 <div>
   {{Home.stuff}}
+
+  <div class="">
+    <p>
+      Search: {{Home.xyz}}
+    </p>
+    <input ng-model='Home.xyz' />
+    <a href=/search/{{Home.xyz}} class='btn btn-info'>
+      Search!
+    </a>
+  </div>
+
 </div>
