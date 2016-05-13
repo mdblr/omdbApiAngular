@@ -15,7 +15,7 @@
         return $http.get(url)
                 .then(
                   function(success) {
-                    return success;
+                    return success.data.Search;
                   },
                   function(error) {
                     console.log(error);
@@ -25,7 +25,7 @@
       }
 
 
-      search.singleTitle = function (input, type) {
+      search.singleTitle = function (input, type, media) {
 
         let url = urlConfig.config(input, search, media);
 
