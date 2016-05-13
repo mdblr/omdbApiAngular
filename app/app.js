@@ -15,12 +15,12 @@
         controller: 'Home'
       })
       .when('/search/:movieString', {
-        templateUrl: '/search-feat/results.html',
+        templateUrl: '/queryAll-feat/results.html',
         controllerAs: 'Search',
         controller: 'Search'
       })
       .when('/search/title/:title', {
-        templateUrl: '/title-feat/listing.html',
+        templateUrl: '/queryTitle-feat/listing.html',
         controllerAs: 'Listing',
         controller: 'Listing'
       })
