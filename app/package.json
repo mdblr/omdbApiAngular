@@ -1,0 +1,30 @@
+{
+  "name": "movie-search",
+  "version": "1.0.0",
+  "description": "simple angular app ",
+  "main": "index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node node_modules/karma/bin/karma start tests/karma.conf.js",
+    "start": "superstatic"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theDobblerEffect/omdbApiAngular/tree/master/app"
+  },
+  "keywords": [
+    "angular-1",
+    "john-papa",
+    "omdb"
+  ],
+  "author": "thedobblereffect",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
+  }
+}
