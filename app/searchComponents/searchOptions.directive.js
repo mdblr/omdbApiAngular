@@ -9,7 +9,7 @@
         scope: {
           feature: '=feat'
         },
-        temaplate: `
+        template: `
         <select ng-model='feature.media'>
           <option value='all'>All</option>
           <option value='movie'>Movie</option>
