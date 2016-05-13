@@ -3,32 +3,16 @@
     .module('omdbApp')
     .factory('searchOMDB', searchOMDB)
 
-    searchOMDB.$inject = ['$http'];
+    searchOMDB.$inject = ['$http', 'urlConfig'];
 
-    function searchOMDB($http)  {
+    function searchOMDB($http, urlConfig)  {
 
-      var apiBaseUrl = 'http://www.omdbapi.com/?';
       var search = {};
-      // api query param for general search
-      var general = 's='
-      // api query param for specific search
-      var title = 't=';
 
+      search.titlesLike = function (input, search, media) {
 
-      var configInput = function(input, type) {
-        input = input.trim();
-        input = input.replace(' ', '+');
-
-        type === 'title' ? input = (title + input) : input = (general + input);
-
-        return input;
-      }
-
-      search.titlesLike = function (input, type) {
-
-        input = configInput(input, type);
-
-        return $http.get(apiBaseUrl + input)
+        let url = urlConfig.config(input, search, media);
+        return $http.get(url)
                 .then(
                   function(success) {
                     return success;
@@ -43,9 +27,9 @@
 
       search.singleTitle = function (input, type) {
 
-        input = configInput(input, type);
+        let url = urlConfig.config(input, search, media);
 
-        return $http.get(apiBaseUrl + input)
+        return $http.get(url)
                 .then(
                   function(success) {
                     return success.data;
