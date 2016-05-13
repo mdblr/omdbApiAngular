@@ -1,7 +1,15 @@
 <h1>home</h1>
 <div>
   {{Home.stuff}}
-
-<de-new-search feat='Home'></de-new-search>
+  <div>
+    <de-new-search feat='Home'></de-new-search>
+    <!-- <select ng-model='Home.media'>
+      <option value='all'>All</option>
+      <option value='movie'>Movie</option>
+      <option value='series'>Series</option>
+      <option value='episode'>Episode</option>
+    </select> -->
+    <de-search-options feat='Home'></de-search-options>
+  </div>
 
 </div>
