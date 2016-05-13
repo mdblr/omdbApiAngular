@@ -14,12 +14,12 @@
         controllerAs: 'Home',
         controller: 'Home'
       })
-      .when('/search', {
+      .when('/search/:movieString', {
         templateUrl: '/search-feat/results.html',
-        controllerAs: 'Results',
-        controller: 'Results'
+        controllerAs: 'Search',
+        controller: 'Search'
       })
-      .when('/movie', {
+      .when('/search/title/:title', {
         templateUrl: '/title-feat/listing.html',
         controllerAs: 'Listing',
         controller: 'Listing'
