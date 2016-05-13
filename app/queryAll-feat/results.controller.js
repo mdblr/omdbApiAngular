@@ -15,9 +15,8 @@
       vm.films, vm.error;
 
       searchOMDB.titlesLike(userInput, 'search', media)
-      .then(function(omdb) {
-        console.log(`results: ${(omdb.data.Search)}`);
-        vm.films = omdb.data.Search;
+      .then(function(data) {
+        !data ? vm.nope = "Sorry, we don't know that one" : vm.films = data;
       })
       .catch(function(error) {
         vm.error = "Something wen't wrong! Sorry. "
