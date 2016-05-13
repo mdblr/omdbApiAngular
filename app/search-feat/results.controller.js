@@ -2,12 +2,23 @@
 
   angular
     .module('omdbApp')
-    .controller('Results', Results)
+    .controller('Search', Search)
 
-    function Results() {
+    Search.$inject=['searchOMDB','$routeParams'];
+
+    function Search(searchOMDB, $routeParams) {
 
       let vm = this;
-      vm.stuff='results is working';
+      let userInput = $routeParams.movieString;
+      vm.films;
+      vm.error;
 
+      searchOMDB.titlesLike(userInput, 'search')
+      .then(function(omdb) {
+        vm.films = omdb.data.Search;
+      })
+      .catch(function(error) {
+        vm.error = "Something wen't wrong! Sorry. "
+      });
     }
 })();
