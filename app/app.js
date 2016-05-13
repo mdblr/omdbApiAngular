@@ -8,20 +8,19 @@
   config.$inject = ['$routeProvider', '$locationProvider'];
 
   function config($routeProvider, $locationProvider) {
-    console.log('routes');
     $routeProvider
       .when('/', {
-        templateUrl: '/home/home.html',
+        templateUrl: '/home-feat/home.html',
         controllerAs: 'Home',
         controller: 'Home'
       })
       .when('/search', {
-        templateUrl: '/search/results.html',
+        templateUrl: '/search-feat/results.html',
         controllerAs: 'Results',
         controller: 'Results'
       })
       .when('/movie', {
-        templateUrl: '/movie/listing.html',
+        templateUrl: '/title-feat/listing.html',
         controllerAs: 'Listing',
         controller: 'Listing'
       })
