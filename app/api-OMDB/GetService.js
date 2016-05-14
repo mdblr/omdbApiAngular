@@ -15,6 +15,7 @@
         return $http.get(url)
                 .then(
                   function(success) {
+                    console.log(success.data.Search); 
                     return success.data.Search;
                   },
                   function(error) {
