@@ -7,10 +7,10 @@
       return {
         restrict: 'E',
         scope: {
-          feature: '=feat'
+          purpose: '='
         },
         template: `
-        <select ng-model='feature.media'>
+        <select ng-model='purpose'>
           <option value='all'>All</option>
           <option value='movie'>Movie</option>
           <option value='series'>Series</option>

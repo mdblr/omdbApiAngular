@@ -7,13 +7,13 @@
       return {
         restrict: 'E',
         scope: {
-          feature: '=feat'
+          feature: '='
         },
         template:
         `<div>
           <p>Start a new search</p>
-          <input type='text' ng-model='feature.newSearch' />
-          <a href=/search/{{feature.media}}/{{feature.newSearch}}>Submit</a>
+          <input type='text' ng-model='newSearch' />
+          <a class='btn btn-default' href=/search/{{feature}}/{{newSearch}}>Submit</a>
         </div>`
       }
     }
