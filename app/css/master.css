@@ -1,0 +1,32 @@
+.httpCat404 {
+  height: 240px;
+}
+
+#header {
+  height: 4em;
+  border: dashed orange;
+  border-width: thick;
+}
+
+#results {
+  overflow: scroll;
+  max-height:100vh;
+}
+
+.r {
+  display: flex;
+  flex-direction: row;
+}
+
+.c {
+  display: flex;
+  flex-direction: column;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.inlineFlex {
+  display: inline-flex !important;
+}
