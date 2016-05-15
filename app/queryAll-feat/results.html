@@ -1,18 +1,30 @@
-<h1>results</h1>
-<div ng-if='Search.nope'>
-  {{Search.nope}}
-</div>
-<de-search-options purpose='filter'></de-search-options>
-<div ng-if='Search.films'>
-  <div ng-repeat='film in Search.films | filter: filter '>
-    <br /><a href=/{{film.Type}}/{{film.Title}}>{{film.Title}}</a><br />
-    <div ng-if='film.Poster !== "N/A"'>
-      <img ng-src='{{film.Poster}}'/>
+
+
+<div class='r'>
+
+  <aside class='c col-md-5'>
+    <h2>Start a new search</h2>
+    <de-new-search feature='search'></de-new-search>
+    <de-search-options purpose='search'></de-search-options>
+
+  </aside>
+
+  <main id='results' class='c container'>
+    <h1>results</h1>
+    <div ng-if='Search.nope'>
+      {{Search.nope}}
     </div>
-    <div ng-if='film.Poster === "N/A"'>
-      <img id='httpCat404' src='https://http.cat/404' />
+    <de-search-options purpose='filter'></de-search-options>
+    <div ng-if='Search.films'>
+      <div ng-repeat='film in Search.films | filter: filter '>
+        <br /><a href=/{{film.Type}}/{{film.Title}}>{{film.Title}}</a><br />
+        <div ng-if='film.Poster !== "N/A"'>
+          <img ng-src='{{film.Poster}}'/>
+        </div>
+        <div ng-if='film.Poster === "N/A"'>
+          <img class='httpCat404' src='https://http.cat/404' />
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
 </div>
-<de-new-search feature='search'></de-new-search>
-<de-search-options purpose='search'></de-search-options>
