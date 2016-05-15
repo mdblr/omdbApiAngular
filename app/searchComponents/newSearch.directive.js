@@ -11,9 +11,8 @@
         },
         template:
         `<div>
-          <p>Start a new search</p>
-          <input type='text' ng-model='newSearch' />
-          <a class='btn btn-default' href=/search/{{feature}}/{{newSearch}}>Submit</a>
+          <input type='text' ng-model='newSearch' placeholder='e.g., Batman Returns'/>
+          <a class='btn btn-default' href=/search/{{feature}}/{{newSearch}}>let's go</a>
         </div>`
       }
     }
