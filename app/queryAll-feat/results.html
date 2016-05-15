@@ -2,9 +2,17 @@
 <div ng-if='Search.nope'>
   {{Search.nope}}
 </div>
+<de-search-options purpose='filter'></de-search-options>
 <div ng-if='Search.films'>
-  <div ng-repeat='film in Search.films'>
+  <div ng-repeat='film in Search.films | filter: filter '>
     <br /><a href=/{{film.Type}}/{{film.Title}}>{{film.Title}}</a><br />
+    <div ng-if='film.Poster !== "N/A"'>
+      <img ng-src='{{film.Poster}}'/>
+    </div>
+    <div ng-if='film.Poster === "N/A"'>
+      <img id='httpCat404' src='https://http.cat/404' />
+    </div>
   </div>
 </div>
-<de-new-search feat='Search'></de-new-search>
+<de-new-search feature='search'></de-new-search>
+<de-search-options purpose='search'></de-search-options>
