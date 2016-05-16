@@ -25,11 +25,27 @@
 
   </head>
   <body>
-    <header id='header' class='inlineFlex r alignCenter container-fluid'>
-      <h4>Search for information on OMDB about a TV series, episode, or Movies. </h4>
-    </header>
 
-    <div class='container' ng-view></div>
+    <div class='c container-fluid'>
+
+      <section class='inlineFlex justifyCenter'>
+        <header id='header' class='alignCenter'>
+          <h4>Search for information on OMDB about a TV series, episode, or Movies. </h4>
+        </header>
+      </section>
+
+      <section class='r flex-start'>
+        <aside class='spaceAround'>
+          <h2>Start a new search</h2>
+          <div class='r flex-end'>
+            <de-new-search feature='search'></de-new-search>
+          </div>
+        </aside>
+
+        <main ng-view></main>
+      </section>
+    </div>
+
 
 
   </body>
