@@ -32,9 +32,7 @@
           input = input + media.concat('series')
         }
 
-        url.ready = url.base.concat(input)
-
-        return url.ready
+        return url.ready = url.base.concat(input)
       }
 
       return url
