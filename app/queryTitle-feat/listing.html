@@ -1,8 +1,23 @@
-<h1>listing</h1>
-<div>
-    {{Listing.film}}
-</div>
-<div ng-if='vm.error'>
-  {{Listing.error}}
-</div>
-<de-new-search feat='Listing'></de-new-search>
+<main id='results'>
+  <div>
+    <h1 class='h1MarginBye'>{{Listing.film.Title}}<small>&nbsp; <i>{{Listing.film.Year}}</i>, Rated: {{Listing.film.Rated}}</small></h1>
+
+    <p>Released: {{Listing.film.Released}}</p>
+    <p>Runtime: {{Listing.film.Runtime}}</p>
+    <p>Applicable Categories: {{Listing.film.Genre}}</p>
+    <p>Director: {{Listing.film.Director}}</p>
+    <p>Writer(s): {{Listing.film.Writer}}</p>
+    <p>Actors: {{Listing.film.Actors}}</p>
+    <p>Plot: {{Listing.film.Plot}}  </p>
+    <p>Language(s): {{Listing.film.Language}}</p>
+    <p>Country of origin: {{Listing.film.Country}}</p>
+    <p>Awards: {{Listing.film.Awards}}</p>
+    <p><img ng-src={{Listing.film.Poster}} /></p>
+    <p>Metascore: {{Listing.film.Metascore}}</p>
+    <p>IMDB Rating: {{Listing.film.imdbRating}}</p>
+
+  </p>
+  <div ng-if='vm.error'>
+    {{Listing.error}}
+  </div>
+</main>
