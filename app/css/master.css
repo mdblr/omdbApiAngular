@@ -1,5 +1,14 @@
-.httpCat404 {
-  height: 240px;
+body{
+  box-sizing: border-box;
+}
+
+.shrug {
+  width: 240px;
+}
+
+.poster {
+  margin: 10px;
+  height: 80%;
 }
 
 #header {
@@ -9,8 +18,13 @@
 }
 
 #results {
+  margin-top: 10px;
   overflow: scroll;
-  max-height:100vh;
+  max-height:94vh;
+  max-width: 74vw;
+  min-width: 74vw;
+  word-wrap: break-word;
+  padding-left: 50px;
 }
 
 .r {
@@ -27,6 +41,25 @@
   align-items: center;
 }
 
+.justifyCenter {
+  justify-content: center;
+}
+
 .inlineFlex {
   display: inline-flex !important;
+}
+
+.h1MarginBye {
+  margin-top: 0.1em !important;
+}
+
+.flexEnd {
+  align-items: flex-end;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    display: none;
 }
