@@ -10,7 +10,6 @@
           purpose: '='
         },
         template: `
-        Refine media: &nbsp;
         <select ng-model='purpose'>
           <option value='all'>All</option>
           <option value='movie'>Movie</option>
