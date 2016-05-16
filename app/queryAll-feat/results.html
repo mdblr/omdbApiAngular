@@ -1,30 +1,35 @@
+<section id='results'>
 
-
-<div class='r'>
-
-  <aside class='c col-md-5'>
-    <h2>Start a new search</h2>
-    <de-new-search feature='search'></de-new-search>
-    <de-search-options purpose='search'></de-search-options>
-
-  </aside>
-
-  <main id='results' class='c container'>
-    <h1>results</h1>
+  <header>
+    <h1 class='h1MarginBye inlineFlex'>Results</h1>
+    <de-search-options purpose='Search.filter'></de-search-options>
     <div ng-if='Search.nope'>
       {{Search.nope}}
     </div>
-    <de-search-options purpose='filter'></de-search-options>
-    <div ng-if='Search.films'>
-      <div ng-repeat='film in Search.films | filter: filter '>
-        <br /><a href=/{{film.Type}}/{{film.Title}}>{{film.Title}}</a><br />
-        <div ng-if='film.Poster !== "N/A"'>
-          <img ng-src='{{film.Poster}}'/>
-        </div>
-        <div ng-if='film.Poster === "N/A"'>
-          <img class='httpCat404' src='https://http.cat/404' />
-        </div>
-      </div>
-    </div>
+
+  </header>
+
+  <main>
+    <section ng-repeat='(key, values) in Search.typeOfResult'>
+
+      <h3>{{key}}</h3>
+
+      <summary ng-if='values.length < 1'>
+        Sorry, there were no results for this type.
+      </summary>
+
+      <summary ng-repeat='result in values | filter: Search.filter'>
+          <section>
+              <a href=/{{result.Type}}/{{result.Title}}>{{result.Title}}</a>,
+              <i>{{result.Year}}</i>
+          </section>
+          <section>
+            <img ng-if='result.Poster !== "N/A"' ng-src='{{result.Poster}}' class='poster'/>
+            <img ng-if='result.Poster === "N/A"'class='shrug' src='https://s-media-cache-ak0.pinimg.com/736x/b4/14/de/b414de79dc4500757695c83d6ab4a912.jpg' />
+          </section>
+      </summary>
+
+    </section>
   </main>
-</div>
+
+</section>
